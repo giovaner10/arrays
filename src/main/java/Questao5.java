@@ -8,6 +8,10 @@ public class Questao5 {
         int aux;
 
 
+        //vetor[vetor.length - 1] = //valor que o usuario digitou
+
+
+
 
 
         for(int i = 0; i<vetor.length; i++){
