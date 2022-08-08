@@ -1,6 +1,7 @@
 package sorteioradio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Ouvintes {
@@ -12,7 +13,6 @@ public class Ouvintes {
     private int numeroJogadas;
 
     private int numeroAcertos;
-
 
 
     public Ouvintes(String nome) {
@@ -80,8 +80,6 @@ public class Ouvintes {
     }
 
 
-
-
     public void listarPorIndex(ArrayList<Ouvintes> ouvintesArrayList, int index) {
 
         System.out.println(ouvintesArrayList.get(index));
@@ -112,10 +110,6 @@ public class Ouvintes {
     }
 
 
-
-
-
-
     public void jogadaUsuario(ArrayList<Ouvintes> ouvintesArrayList, int index, int pesoDoJogo, int lance) {
 
         try {
@@ -126,18 +120,18 @@ public class Ouvintes {
             );
 
 
-            if(
-                     lance >= pesoDoJogo - 150 &&
-                             lance <= pesoDoJogo + 150
+            if (
+                    lance >= pesoDoJogo - 150 &&
+                            lance <= pesoDoJogo + 150
 
-            ){
+            ) {
                 ouvintesArrayList.get(index).setNumeroAcertos(
                         ouvintesArrayList.get(index).getNumeroAcertos() + 1
                 );
 
                 System.out.println("Usuario acertou");
                 System.out.println(ouvintesArrayList.get(index).toString());
-            }else {
+            } else {
                 System.out.println("Infelizmente vc nao acertou");
             }
 
@@ -149,8 +143,9 @@ public class Ouvintes {
 
     public void verRanking(ArrayList<Ouvintes> ouvintesArrayList) {
 
-        ouvintesArrayList.sort(Comparator.comparing(Ouvintes::getNumeroAcertos));
-        listarTodos(ouvintesArrayList);
+        Collections.sort(ouvintesArrayList, new ExecutarRanking()); //eu vou ordenar o array de acordo com o numero de acertos
+
+       listarTodos(ouvintesArrayList); //vou chamar o metodo listar com o array ordenado
     }
 
 

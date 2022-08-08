@@ -20,6 +20,12 @@ public class Main {
         Scanner ler = new Scanner(System.in);
 
         ouvintesArrayList.add(new Ouvintes("Giovane"));
+        ouvintesArrayList.add(new Ouvintes("java"));
+        ouvintesArrayList.add(new Ouvintes("jogo"));
+        ouvintesArrayList.add(new Ouvintes("cadeira"));
+        ouvintesArrayList.add(new Ouvintes("mesa"));
+        ouvintesArrayList.add(new Ouvintes("sofa"));
+
         ouvintesArrayList.add(new Ouvintes("Leh"));
 
 
